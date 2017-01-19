@@ -1,12 +1,41 @@
-﻿<Window x:Class="DataTemplate.MainWindow"
+﻿<Window x:Class="DataTemplateTest.CarList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DataTemplate"
+        xmlns:local="clr-namespace:DataTemplateTest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="CarList" Height="300" Width="300">
+    <Window.Resources>
+        <local:Cars x:Key="rsCarList">
+            <local:CarList Company="BMW" CarName="750"/>
+            <local:CarList Company="Honda" CarName="Accord"/>
+            <local:CarList Company="Audi" CarName="A6"/>
+            <local:CarList Company="Folkswagen" CarName="Beetle"/>
+            <local:CarList Company="Crysler" CarName="Crossfire"/>
+        </local:Cars>
+        <DataTemplate x:Key="dtListBox">
+            <Border Name="border" BorderBrush="Aqua" BorderThickness="1" Padding="5" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Company:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Company}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="CarName:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=CarName}"/>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel DataContext="{StaticResource rsCarList}">
+        <TextBlock Name="blah" FontSize="20" Margin="10,0,0,0" Text="Car List"/>
+        <ListBox Width="260" Margin="10" ItemsSource="{Binding}" ItemTemplate="{StaticResource dtListBox}" HorizontalContentAlignment="Stretch">
+        </ListBox>
+    </StackPanel>
 </Window>
