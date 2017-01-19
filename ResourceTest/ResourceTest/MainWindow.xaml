@@ -37,15 +37,28 @@
             <Setter Property="VerticalContentAlignment" Value="Top"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType=""
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border SnapsToDevicePixels="True" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontFamily" Value="Gulim"/>
+            <Setter Property="FontSize" Value="20"/>
         </Style>
     </Window.Resources>
     <Grid>
         <Label Height="28" Margin="14,44,12,0" Name="label1" VerticalAlignment="Top" Padding="0" Style="{DynamicResource null}"> Hellow Junho</Label>
-        <Button Height="23" HorizontalAlignment="Left" Margin="14,0,0,46" Name="btnNormal" VerticalAlignment="Bottom" Width="75">Normal</Button>
-        <Button Height="23" Margin="105,0,98,46" Name="btnRes1" VerticalAlignment="Bottom" Width="75">Resource1</Button>
-        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,46" Name="btnRes2" VerticalAlignment="Bottom" Width="75">Resource2</Button>
+        <Button Height="23" HorizontalAlignment="Left" Margin="14,0,0,46" Name="btnNormal" VerticalAlignment="Bottom" Width="75" Click="btnNormal_Click">Normal</Button>
+        <Button Height="23" Margin="105,0,98,46" Name="btnRes1" VerticalAlignment="Bottom" Width="75" Click="btnRes1_Click">Resource1</Button>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,46" Name="btnRes2" VerticalAlignment="Bottom" Width="75" Click="btnRes2_Click">Resource2</Button>
     </Grid>
 </Window>

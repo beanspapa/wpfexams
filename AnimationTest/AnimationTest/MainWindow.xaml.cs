@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ResourceTest
+namespace AnimationTest
 {
     /// <summary>
     /// MainWindow.xaml에 대한 상호 작용 논리
@@ -23,21 +23,6 @@ namespace ResourceTest
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnNormal_Click(object sender, RoutedEventArgs e)
-        {
-            label1.Style = null;
-        }
-
-        private void btnRes1_Click(object sender, RoutedEventArgs e)
-        {
-            label1.Style = (Style)FindResource("LabelStyle1");
-        }
-
-        private void btnRes2_Click(object sender, RoutedEventArgs e)
-        {
-            label1.Style = (Style)FindResource("LabelStyle2");
         }
     }
 }
