@@ -1,8 +1,8 @@
-﻿<Application x:Class="AnimationTest.App"
+﻿<Application x:Class="PanelSample.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AnimationTest"
-             StartupUri="Document.xaml">
+             xmlns:local="clr-namespace:PanelSample"
+             StartupUri="WrapPanel.xaml">
     <Application.Resources>
          
     </Application.Resources>
