@@ -1,0 +1,16 @@
+﻿<Window x:Class="RoutedEventTest.Tunneling"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutedEventTest"
+        mc:Ignorable="d"
+        Title="Tunneling" Height="400" Width="400" Background="GreenYellow" PreviewMouseDown="Window_PreviewMouseDown">
+    <Grid MouseDown="Grid_MouseDown" PreviewMouseDown="Grid_PreviewMouseDown">
+        <Button Margin="10" PreviewMouseDown="Button_PreviewMouseDown">
+            <Canvas Width="210" Height="210" Background="#ff5d5252" PreviewMouseDown="Canvas_PreviewMouseDown">
+                <Ellipse Fill="#ffff0000" Stroke="#ff000000" Width="100" Height="100" Canvas.Left="56.678" Canvas.Top="60.012" PreviewMouseDown="Ellipse_PreviewMouseDown"/>
+            </Canvas>
+        </Button>
+    </Grid>
+</Window>
