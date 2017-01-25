@@ -4,8 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{85BFB98A-BC2E-4DA2-BC60-A4838968E006}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{D0C10BED-C9FF-4288-83E4-5101EC57283D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RoutedEventTest</RootNamespace>
     <AssemblyName>RoutedEventTest</AssemblyName>
@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +58,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Direct_EventSetter.xaml.cs">
+      <DependentUpon>Direct_EventSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Direct_EventTrigger.xaml.cs">
+      <DependentUpon>Direct_EventTrigger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tunneling.xaml.cs">
+      <DependentUpon>Tunneling.xaml</DependentUpon>
+    </Compile>
     <Page Include="Bubbling.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +79,18 @@
       <DependentUpon>Bubbling.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Direct_EventSetter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Direct_EventTrigger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tunneling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

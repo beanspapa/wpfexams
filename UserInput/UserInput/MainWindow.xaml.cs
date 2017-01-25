@@ -24,5 +24,24 @@ namespace UserInput
         {
             InitializeComponent();
         }
+
+        private void Window_Keyboard_KeyDown(object sender, KeyEventArgs e)
+        {
+            //            label1.Content = "Keyboard.KeyDown";
+            if (Keyboard.GetKeyStates(Key.Enter) == KeyStates.Down)
+                label1.Content = "Enter key is pressed";
+            else
+                label1.Content = "Press Enter key";
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            label2.Content = "UIElement.KeyDown";
+        }
+
+        private void textBox1_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            textBox1.Text = "textBox1.KeyUp";
+        }
     }
 }

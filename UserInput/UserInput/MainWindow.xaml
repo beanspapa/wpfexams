@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UserInput"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" Keyboard.KeyDown="Window_Keyboard_KeyDown"
+        KeyDown="Window_KeyDown">
     <Grid>
-        
+        <Label Height="28" Margin="12,12,12,0" Name="label1" VerticalAlignment="Top">Label1</Label>
+        <Label Height="28" Margin="12,46,12,0" Name="label2" VerticalAlignment="Top">Label2</Label>
+        <TextBox Margin="12,80,12,0" Name="textBox1" PreviewKeyUp="textBox1_PreviewKeyUp" Height="23" VerticalAlignment="Top"/>
     </Grid>
 </Window>
